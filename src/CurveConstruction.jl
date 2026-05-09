@@ -40,12 +40,8 @@ struct WCurve{T<:AbstractFloat,WF<:Function,SWF<:Function,RWF<:Function,AM<:Func
 		else
 			throw(ArgumentError("Invalid source: please ensure that source is equal to either \"Invariants\", or \"Roots\";\nby default source is equal to \"Invariants\""))
 		end
-		###################################### only for rectangular lattices: w1 is real, w2 is purely imaginary
-		#if source == "Periods"
-		#	(g2,g3) = Invariants(data[1], data[2], e)
-		#	Roots = roots([-g3,-g2,0,4])
-		#end
-		T = typeof(real(Roots[1]) + 0.0)
+
+		T = typeof(real(Roots[1] + Roots[2] + Roots[3]) + 0.0)
 		if(isnothing(e))
 			e = 10*eps(T)
 		end
