@@ -1,4 +1,4 @@
-function WeierstrassRawSingular(z,w)
+@inline function WeierstrassRawSingular(z,w)
 	r = pi/w
 	rinv = w/pi
 	ex = exp((z*r)^2/3)
