@@ -4,12 +4,12 @@ function WeierstrassRawSingular(z,w)
 	ex = exp((z*r)^2/3)
 	si = sin(r*z)
 	co = cos(r*z)
-	return (rinv^2 * ex * si^2, ex*(1 - si^2/3), z*ex*si^2*2/3 + (2*rinv)*ex*si*co, ex*(1 - si^2/3)*z*r^2*2/3 - (2*r/3)*ex*si*co)
+	return rinv^2 * ex * si^2, ex*(1 - si^2/3), z*ex*si^2*2/3 + (2*rinv)*ex*si*co, ex*(1 - si^2/3)*z*r^2*2/3 - (2*r/3)*ex*si*co
 end
 
 function WeierstrassFuncRaw(z,OLS,w)
 	n = length(OLS)
-	(S,R,Sz,Rz) = WeierstrassRawSingular(z, w)
+	S,R,Sz,Rz = WeierstrassRawSingular(z, w)
 	for i in 1:n
 		e1 = OLS[n-i+1][1]
 		t = (OLS[n-i+1][2] - OLS[n-i+1][1])*(OLS[n-i+1][3] - OLS[n-i+1][1])
