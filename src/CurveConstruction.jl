@@ -68,7 +68,7 @@ struct WCurve{T<:AbstractFloat,WF<:Function,SWF<:Function,RWF<:Function,AM<:Func
 			zetashift = 0
 			sigmacoeff = 1
 			if (use_periodicity)
-				(u,n1,n2) = shiftToFundamentalParallelogram(u,w1,w2)
+				u,n1,n2 = shiftToFundamentalParallelogram(u,w1,w2)
 				zetashift = 2*n1*e1 + 2*n2*e2
 				sigmacoeff = exp(zetashift*(u + z))
 			end
@@ -81,7 +81,7 @@ struct WCurve{T<:AbstractFloat,WF<:Function,SWF<:Function,RWF<:Function,AM<:Func
 			zetashift = 0
 			sigmacoeff = 1
 			if(use_periodicity)
-				(u,n1,n2) = shiftToFundamentalParallelogram(u,w1,w2)
+				u,n1,n2 = shiftToFundamentalParallelogram(u,w1,w2)
 				zetashift = 2*n1*e1 + 2*n2*e2
 				sigmacoeff = (-1)^(n1*n2 + n1 + n2)*exp(zetashift*(u + z)/2)
 			end
