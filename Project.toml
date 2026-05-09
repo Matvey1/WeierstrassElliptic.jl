@@ -1,0 +1,19 @@
+name = "WeierstrassElliptic"
+uuid = "a0e68dd2-ec10-4c77-a85a-ad196200124a"
+authors = ["matsmir98"]
+version = "1.0.0"
+
+[deps]
+PolynomialRoots = "3a141323-8675-5d76-9d11-e1df1406c778"
+
+[compat]
+PolynomialRoots = "1.0.0"
+
+[extras]
+Random = "9a3f8284-a2c9-5f02-9a11-845980a1fd5c"
+SpecialFunctions = "276daf66-3868-5448-9aa4-cd146d93841b"
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+EllipticFunctions = "6a4e32cb-b31a-4929-85af-fb29d9a80738"
+
+[targets]
+test = ["Random", "SpecialFunctions", "Test", "EllipticFunctions"]
